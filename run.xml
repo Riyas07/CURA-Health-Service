@@ -1,0 +1,7 @@
+<suite name="CHS">
+    <test name="CHS happy path">
+        <classes>
+            <class name="Test_cases.Happy_path"/>
+        </classes>
+    </test>
+</suite>
