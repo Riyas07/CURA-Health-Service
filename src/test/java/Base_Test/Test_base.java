@@ -36,7 +36,7 @@ public class Test_base {
          options.addArguments("--disable-infobars");
          driver=new EdgeDriver(options);
          driver.get(Property_manager.getInstance().getBase_url());
-         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
          wait=new FluentWait<>(driver)
                  .withTimeout(Duration.ofSeconds(30))
                  .pollingEvery(Duration.ofSeconds(5))
@@ -49,6 +49,6 @@ public class Test_base {
          //Logout
          driver.findElement(By.id("menu-toggle")).click();
          driver.findElement(By.linkText("Logout")).click();
-         driver.close();
+         driver.quit();
      }
 }

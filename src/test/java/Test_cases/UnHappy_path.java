@@ -36,5 +36,6 @@ public class UnHappy_path extends Test_base {
               e.printStackTrace();
           }
       }
+      driver.quit();
     }
 }
