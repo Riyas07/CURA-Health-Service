@@ -49,6 +49,6 @@ public class Test_base {
          //Logout
          driver.findElement(By.id("menu-toggle")).click();
          driver.findElement(By.linkText("Logout")).click();
-         driver.quit();
+         driver.close();
      }
 }
