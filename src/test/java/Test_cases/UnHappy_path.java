@@ -24,10 +24,10 @@ public class UnHappy_path extends Test_base {
      String msg="Login failed! Please ensure the username and password are valid.";
       if(warn.getText().equals(msg))
       {
-        TakesScreenshot takesScreenshot=  (TakesScreenshot)driver;
-      File from= takesScreenshot.getScreenshotAs(OutputType.FILE);
-      File to=new File("src/main/resources/screenShot/loginerror.png");
-          FileHandler.copy(from,to);
+//        TakesScreenshot takesScreenshot=  (TakesScreenshot)driver;
+//      File from= takesScreenshot.getScreenshotAs(OutputType.FILE);
+//      File to=new File("src/main/resources/screenShot/loginerror.png");
+//          FileHandler.copy(from,to);
       }
     }
 }
