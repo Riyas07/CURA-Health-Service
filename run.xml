@@ -1,5 +1,5 @@
 <suite name="CHS">
-    <test name="CHS happy path">
+    <test name="CHS happy path" parallel="test" thread-count="2">
         <classes>
             <class name="Test_cases.Happy_path"/>
         </classes>
