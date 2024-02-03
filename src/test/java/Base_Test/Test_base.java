@@ -1,6 +1,8 @@
 package Base_Test;
 
+import Web_Elements.Home_page;
 import org.openqa.selenium.By;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -23,8 +25,15 @@ public class Test_base {
      {
          EdgeOptions options=new EdgeOptions();
          options.addArguments("start-maximized");
-         //options.addArguments("--headless");
+        // options.addArguments("--headless");
          options.addArguments("disable-gpu");
+         options.addArguments("--remote-allow-origins=*");
+         options.addArguments("start-maximized");
+         options.addArguments("--disable-notifications");
+         options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+         options.addArguments("--disable-extensions");
+         options.addArguments("--no-sandbox");
+         options.addArguments("--disable-infobars");
          driver=new EdgeDriver(options);
          driver.get(Property_manager.getInstance().getBase_url());
          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -32,10 +41,10 @@ public class Test_base {
                  .withTimeout(Duration.ofSeconds(30))
                  .pollingEvery(Duration.ofSeconds(5))
                  .ignoring(StaleElementReferenceException.class);
+         Home_page.getInstance().click_makeAppointment();
      }
 
-     @AfterClass
-    public void logout()
+    public static void logout()
      {
          //Logout
          driver.findElement(By.id("menu-toggle")).click();

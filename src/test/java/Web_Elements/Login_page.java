@@ -44,12 +44,38 @@ public class Login_page extends Test_base {
         }
         return loginPage;
     }
+    public Login_page validate_user_name_txt_box(String username)
+    {
+
+        if(username_txtbox.isEnabled())
+        {
+            Assert.assertEquals(username_txtbox.getAttribute("placeholder"),"Username","login : username titile is not valid");
+            username_txtbox.sendKeys(username);
+        }
+        else {
+            System.out.println("username txt box is not enabled");
+        }
+        return loginPage;
+    }
     public Login_page validate_password_txt_box()
     {
         if (password_txtbox.isEnabled())
         {
             Assert.assertEquals(password_txtbox.getAttribute("placeholder"),"Password","login : password titile is not valid");
             password_txtbox.sendKeys(Property_manager.getInstance().getPassword());
+
+        }
+        else {
+            System.out.println("password txt box is not enabled");
+        }
+        return loginPage;
+    }
+    public Login_page validate_password_txt_box(String password)
+    {
+        if (password_txtbox.isEnabled())
+        {
+            Assert.assertEquals(password_txtbox.getAttribute("placeholder"),"Password","login : password titile is not valid");
+            password_txtbox.sendKeys(password);
 
         }
         else {

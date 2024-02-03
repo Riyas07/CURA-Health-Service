@@ -5,12 +5,12 @@ import Web_Elements.*;
 import org.testng.annotations.Test;
 
 public class Happy_path extends Test_base {
+//    @Test
+//    public void click_makeAppointment()
+//    {
+//        Home_page.getInstance().click_makeAppointment();
+//    }
     @Test
-    public void click_makeAppointment()
-    {
-        Home_page.getInstance().click_makeAppointment();
-    }
-    @Test(dependsOnMethods = "click_makeAppointment")
     public void signin()
     {
         Login_page.getInstance().validate_user_name_txt_box()
@@ -36,5 +36,6 @@ public class Happy_path extends Test_base {
     public void validate_history()
     {
         History_page.getInstance().click_toggle().click_history().validate_application_is_present();
+        logout();
     }
 }

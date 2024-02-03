@@ -4,4 +4,9 @@
             <class name="Test_cases.Happy_path"/>
         </classes>
     </test>
+    <test>
+        <classes>
+            <class name="Test_cases.UnHappy_path"/>
+        </classes>
+    </test>
 </suite>
