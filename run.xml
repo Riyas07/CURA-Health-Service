@@ -4,7 +4,7 @@
             <class name="Test_cases.Happy_path"/>
         </classes>
     </test>
-    <test>
+    <test name="unhappy path">
         <classes>
             <class name="Test_cases.UnHappy_path"/>
         </classes>
