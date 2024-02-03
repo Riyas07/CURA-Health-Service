@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class UnHappy_path extends Test_base {
     @Test
-    public void invalid_login_credentials() throws IOException {
+    public void invalid_login_credentials() {
         Login_page.getInstance()
                 .validate_user_name_txt_box("riyas")
                 .validate_password_txt_box("riyas")
@@ -24,10 +24,17 @@ public class UnHappy_path extends Test_base {
      String msg="Login failed! Please ensure the username and password are valid.";
       if(warn.getText().equals(msg))
       {
-//        TakesScreenshot takesScreenshot=  (TakesScreenshot)driver;
-//      File from= takesScreenshot.getScreenshotAs(OutputType.FILE);
-//      File to=new File("src/main/resources/screenShot/loginerror.png");
-//          FileHandler.copy(from,to);
+        TakesScreenshot takesScreenshot=  (TakesScreenshot)driver;
+      File from= takesScreenshot.getScreenshotAs(OutputType.FILE);
+      File to=new File("src/main/resources/screenShot/loginerror.png");
+          try
+          {
+              FileHandler.copy(from,to);
+          }
+          catch (Exception e)
+          {
+              e.printStackTrace();
+          }
       }
     }
 }
